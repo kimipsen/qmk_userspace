@@ -21,3 +21,8 @@ for more options.
 // #define RGBLED_NUM 72
 // #define WS2812_DI_PIN D3
 // #define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
+
+#ifdef TAPPING_TERM
+    #undef TAPPING_TERM
+    #define TAPPING_TERM 200
+#endif
