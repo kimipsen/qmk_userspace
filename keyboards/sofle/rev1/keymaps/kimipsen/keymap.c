@@ -15,6 +15,10 @@ enum sofle_layers {
 enum custom_keycodes {
     KC_QWERTY = SAFE_RANGE,
     KC_COLEMAK,
+	KC_COLEMAKDH,
+    KC_LOWER,
+    KC_RAISE,
+    KC_ADJUST,
     KC_PRVWD,
     KC_NXTWD,
     KC_LSTRT,
@@ -205,7 +209,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef OLED_ENABLE
 
 static void render_logo(void) {
-    static const char PROGMEM qmk_logo[] = {
+    static const char PROGMEM knowit_logo[] = {
         0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01, 0xff, 0xff, 0xff, 
         0x01, 0xff, 0xff, 0xff, 0x01, 0xff, 0xff, 0xff, 0xe1, 0xff, 0xff, 0xff, 0xe1, 0xff, 0xff, 0xff, 
         0xe1, 0xff, 0xe0, 0xff, 0xe1, 0xff, 0xc0, 0xff, 0xe1, 0xff, 0x80, 0xff, 0xe1, 0xff, 0x00, 0xff, 
@@ -216,7 +220,7 @@ static void render_logo(void) {
         0x00, 0x7f, 0x80, 0xff, 0x00, 0x3f, 0xc0, 0xff, 0x00, 0x7f, 0xc0, 0xff, 0xff, 0xff, 0xff, 0xff
     };
 
-    oled_write_P(qmk_logo, false);
+    oled_write_P(knowit_logo, false);
 }
 
 static void print_status_narrow(void) {
@@ -297,6 +301,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_COLEMAK:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_COLEMAK);
+            }
+            return false;
+        case KC_COLEMAKDH:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_COLEMAKDH);
+            }
+            return false;
+        case KC_LOWER:
+            if (record->event.pressed) {
+                layer_on(_LOWER);
+                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+            } else {
+                layer_off(_LOWER);
+                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+            }
+            return false;
+        case KC_RAISE:
+            if (record->event.pressed) {
+                layer_on(_RAISE);
+                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+            } else {
+                layer_off(_RAISE);
+                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+            }
+            return false;
+        case KC_ADJUST:
+            if (record->event.pressed) {
+                layer_on(_ADJUST);
+            } else {
+                layer_off(_ADJUST);
             }
             return false;
         case KC_PRVWD:
@@ -434,9 +468,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
     } else if (index == 1) {
         if (clockwise) {
-            tap_code(KC_PGDN);
-        } else {
             tap_code(KC_PGUP);
+        } else {
+            tap_code(KC_PGDN);
         }
     }
     return true;
