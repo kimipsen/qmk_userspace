@@ -206,8 +206,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
-// led_t led_usb_state;
-
 // #ifdef RGBLIGHT_ENABLE
 // char layer_state_str[70];
 // // Now define the array of layers. Later layers take precedence
@@ -316,8 +314,12 @@ static void print_status_narrow(void) {
         case _COLEMAK:
             oled_write_ln_P(PSTR("Clmk"), false);
             break;
+        case _COLEMAKDH:
+            oled_write_ln_P(PSTR("CmkDH"), false);
+            break;
+
         default:
-            oled_write_P(PSTR("Undef"), false);
+            oled_write_ln_P(PSTR("Undef"), false);
     }
     oled_write_P(PSTR("\n\n"), false);
     // Print current layer
@@ -325,16 +327,23 @@ static void print_status_narrow(void) {
     switch (get_highest_layer(layer_state)) {
         case _COLEMAK:
         case _QWERTY:
-            oled_write_P(PSTR("Base\n"), false);
+        case _COLEMAKDH:
+            oled_write_ln_P(PSTR("Base\n"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise"), false);
+            oled_write_ln_P(PSTR("Raise"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower"), false);
+            oled_write_ln_P(PSTR("Lower"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adj\n"), false);
+            oled_write_ln_P(PSTR("Adj\n"), false);
+            break;
+        case _NUMPAD:
+            oled_write_ln_P(PSTR("Nump\n"), false);
+            break;
+        case _SWITCH:
+            oled_write_ln_P(PSTR("Swit\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
