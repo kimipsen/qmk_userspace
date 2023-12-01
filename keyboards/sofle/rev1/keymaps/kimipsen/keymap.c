@@ -1,5 +1,47 @@
 #include QMK_KEYBOARD_H
 
+#define INDICATOR_BRIGHTNESS 30
+
+#define HSV_OVERRIDE_HELP(h, s, v, Override) h, s , Override
+#define HSV_OVERRIDE(hsv, Override) HSV_OVERRIDE_HELP(hsv,Override)
+
+// Light combinations
+#define SET_INDICATORS(hsv) \
+	{0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, \
+    {36+0, 1, hsv}
+#define SET_UNDERGLOW(hsv) \
+	{1, 6, hsv}, \
+    {36+1, 6,hsv}
+#define SET_NUMPAD(hsv)     \
+	{36+17, 4, hsv},\
+    {36+23, 3, hsv},\
+    {36+28, 3, hsv}
+#define SET_NUMROW(hsv) \
+	{11, 2, hsv}, \
+	{21, 2, hsv}, \
+	{31, 2, hsv}, \
+	{36+ 11, 2, hsv}, \
+	{36+ 21, 2, hsv}, \
+	{36+ 31, 2, hsv}
+#define SET_INNER_COL(hsv)	\
+	{33, 4, hsv}, \
+	{36+ 33, 4, hsv}
+#define SET_OUTER_COL(hsv) \
+	{9, 4, hsv}, \
+	{36+ 9, 4, hsv}
+#define SET_THUMB_CLUSTER(hsv) 	\
+	{26, 2, hsv}, \
+	{36+ 26, 2, hsv}
+#define SET_LAYER_ID(hsv) 	\
+	{0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, \
+    {36+0, 1, HSV_OVERRIDE_HELP(hsv, INDICATOR_BRIGHTNESS)}, \
+    {1, 6, hsv}, \
+    {36+ 1, 6, hsv}, \
+	{8, 4, hsv}, \
+	{36+ 8, 4, hsv}, \
+	{26, 2, hsv}, \
+	{36+ 26, 2, hsv}
+
 enum sofle_layers {
     _DEFAULTS = 0,
     _QWERTY = 0,
