@@ -27,10 +27,13 @@ for more options.
 #define RGBLED_NUM 72
 #define RGBLED_SPLIT \
     { 36, 36 } // haven't figured out how to use this yet
-#ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_SLEEP
-    #define RGBLIGHT_LAYERS
+#define RGBLIGHT_SLEEP
+#define RGBLIGHT_LAYERS
+#define RGBLIGHT_EFFECT_CHRISTMAS
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_STATIC_GRADIENT
 
+#ifdef RGBLIGHT_ENABLE
     //#define RGBLIGHT_ANIMATIONS
 	//#define RGBLIGHT_EFFECT_BREATHING
 	//#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
@@ -46,6 +49,3 @@ for more options.
     #define RGBLIGHT_SAT_STEP 17
     #define RGBLIGHT_VAL_STEP 17
 #endif
-#define RGBLIGHT_EFFECT_CHRISTMAS
-#define RGBLIGHT_EFFECT_RAINBOW_MOOD
-#define RGBLIGHT_EFFECT_STATIC_GRADIENT
