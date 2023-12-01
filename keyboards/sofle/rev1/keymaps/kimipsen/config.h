@@ -17,7 +17,7 @@ for more options.
 // #define RGBLIGHT_SPLIT
 // #define RGBLIGHT_SLEEP
 // #define RGBLIGHT_DEFAULT_ON true
-#define RGBLIGHT_LAYERS
-#define RGBLED_NUM 72
-#define WS2812_DI_PIN D3
-#define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
+// #define RGBLIGHT_LAYERS
+// #define RGBLED_NUM 72
+// #define WS2812_DI_PIN D3
+// #define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
