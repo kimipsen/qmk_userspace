@@ -28,5 +28,5 @@ for more options.
     #define RGBLIGHT_VAL_STEP 17
 
     #define RGBLIGHT_DEFAULT_ON true
-// #define WS2812_DI_PIN D3
+    #define WS2812_DI_PIN D3
 #endif
