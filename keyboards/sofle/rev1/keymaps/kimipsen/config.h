@@ -16,3 +16,4 @@ for more options.
 #define RGBLIGHT_SLEEP
 #define RGBLIGHT_DEFAULT_ON true
 #define RGBLIGHT_LAYERS
+#define RGBLED_NUM 72
