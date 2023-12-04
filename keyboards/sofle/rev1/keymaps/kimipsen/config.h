@@ -12,6 +12,10 @@ for more options.
     #define TAPPING_TERM 200
 #endif
 
+/*
+    Documentation for RGB
+    see https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md
+*/
 #ifdef RGBLIGHT_ENABLE
     #define RGBLED_NUM 72
     #define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
@@ -20,12 +24,11 @@ for more options.
 
     // keep animations for effects
     #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
     #define RGBLIGHT_EFFECT_STATIC_GRADIENT
 
     // remove animations to save space
-    #undef RGBLIGHT_ANIMATIONS
     #undef RGBLIGHT_EFFECT_BREATHING
+    #undef RGBLIGHT_EFFECT_RAINBOW_MOOD
     #undef RGBLIGHT_EFFECT_RAINBOW_SWIRL
     #undef RGBLIGHT_EFFECT_SNAKE
     #undef RGBLIGHT_EFFECT_KNIGHT
@@ -40,4 +43,10 @@ for more options.
 
     #define RGBLIGHT_DEFAULT_ON true
     #define WS2812_DI_PIN D3
+
+    // For x-mas:
+    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_CHRISTMAS
+    // Otherwise:
+    // #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_STATIC_GRADIENT
+
 #endif
