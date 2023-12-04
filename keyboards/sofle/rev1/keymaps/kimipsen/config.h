@@ -24,7 +24,7 @@ for more options.
 
     // keep animations for effects
     #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #undef RGBLIGHT_EFFECT_STATIC_GRADIENT
 
     // remove animations to save space
     #undef RGBLIGHT_EFFECT_BREATHING
@@ -43,10 +43,4 @@ for more options.
 
     #define RGBLIGHT_DEFAULT_ON true
     #define WS2812_DI_PIN D3
-
-    // For x-mas:
-    #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_CHRISTMAS
-    // Otherwise:
-    // #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_EFFECT_STATIC_GRADIENT
-
 #endif
