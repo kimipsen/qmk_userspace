@@ -1,7 +1,6 @@
 name: Build QMK firmware
 
-on: 
-  workflow_call: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 permissions:
   contents: write
