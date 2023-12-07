@@ -68,7 +68,7 @@ enum custom_keycodes {
     KC_DLINE
 };
 
-#define VS_RDBG MOD_MASK_CS(KC_F5)
+#define VS_RDBG LCTL_T(LSFT_T(KC_F5))
 #define HRM_A LGUI_T(KC_A)
 #define HRM_S LALT_T(KC_S)
 #define HRM_D LSFT_T(KC_D)
