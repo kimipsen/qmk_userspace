@@ -68,6 +68,18 @@ enum custom_keycodes {
     KC_DLINE
 };
 
+#define VS_RDBG MOD_MASK_CS(KC_F5)
+#define HRM_A LGUI_T(KC_A)
+#define HRM_S LALT_T(KC_S)
+#define HRM_D LSFT_T(KC_D)
+#define HRM_F LCTL_T(KC_F)
+#define HRM_J RCTL_T(KC_J)
+#define HRM_K RSFT_T(KC_K)
+#define HRM_L LALT_T(KC_L)
+#define HRM_SCLN RGUI_T(KC_SCLN)
+#define PRNT_SCRN LALT(KC_PSCR)
+#define NM_PAD LT(_NUMPAD,KC_TAB)
+#define SWITCH LT(_SWITCH,KC_6)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -86,11 +98,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
   [_QWERTY] = LAYOUT(
-  QK_LEAD,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     LT(_SWITCH,KC_6),    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV, \
-  KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC, \
-  LT(_NUMPAD,KC_TAB),   LGUI_T(KC_A),   LALT_T(KC_S),    LSFT_T(KC_D),    LCTL_T(KC_F),    KC_G,                     KC_H,    RCTL_T(KC_J),    RSFT_T(KC_K),    LALT_T(KC_L), RGUI_T(KC_SCLN),  KC_QUOT, \
-  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, LCTL(LSFT(KC_F5)),     LALT(KC_PSCR), KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
-                 KC_LGUI,KC_TAB,KC_LCTL, KC_LOWER, KC_ENT,      KC_SPC,  KC_RAISE, KC_RCTL, KC_RALT, KC_RGUI \
+  QK_LEAD,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       SWITCH, KC_7,   KC_8,   KC_9,   KC_0,   KC_GRV, \
+  KC_ESC,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC, \
+  NM_PAD,   HRM_A,  HRM_S,  HRM_D,  HRM_F,  KC_G,                       KC_H,   HRM_J,  HRM_K,  HRM_L,  HRM_SCLN, KC_QUOT, \
+  KC_LSFT,  KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   VS_RDBG,        PRNT_SCRN,  KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
+                KC_LGUI, KC_TAB, KC_LCTL, KC_LOWER, KC_ENT,         KC_SPC,  KC_RAISE, KC_RCTL, KC_RALT, KC_RGUI \
 ),
 
 /*
