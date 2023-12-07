@@ -589,7 +589,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_VOLD);
         }
 
-        return true;
+        return false;
     }
     
     if (index == 1) {
@@ -599,7 +599,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             tap_code(KC_PGDN);
         }
 
-        return true;
+        return false;
     }
     return false;
 }
