@@ -23,8 +23,8 @@ for more options.
     #define RGBLIGHT_LAYERS
 
     // keep animations for effects
-    #define RGBLIGHT_EFFECT_CHRISTMAS
-    #undef RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #undef RGBLIGHT_EFFECT_CHRISTMAS
+    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
 
     // remove animations to save space
     #undef RGBLIGHT_EFFECT_BREATHING
