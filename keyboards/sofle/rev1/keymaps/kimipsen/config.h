@@ -17,8 +17,8 @@ for more options.
     see https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgblight.md
 */
 #ifdef RGBLIGHT_ENABLE
-    #define RGBLED_NUM 72
-    #define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
+    //#define RGBLED_NUM 72
+    //#define RGBLED_SPLIT { 36, 36 } // haven't figured out how to use this yet
     #define RGBLIGHT_SLEEP
     #define RGBLIGHT_LAYERS
 
