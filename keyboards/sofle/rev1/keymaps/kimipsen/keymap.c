@@ -600,8 +600,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             tap_code(KC_VOLD);
         }
-
-        return false;
     }
 
     if (index == 1) {
@@ -610,9 +608,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             tap_code(KC_PGUP);
         }
-
-        return false;
     }
+
     return false;
 }
 
