@@ -7,10 +7,8 @@ for more options.
 
 #define LAYER_STATE_8BIT
 
-#ifdef TAPPING_TERM
-    #undef TAPPING_TERM
     #define TAPPING_TERM 150
-#endif
+    #define TAPPING_TERM_PER_KEY
 
 /*
     Documentation for RGB
