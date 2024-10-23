@@ -70,7 +70,7 @@ enum custom_keycodes {
 
 enum {
     TD_SPC_ENT,
-}
+};
 
 #define VS_RDBG LCTL_T(LSFT_T(KC_F5))
 #define HRM_A LGUI_T(KC_A)
