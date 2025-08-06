@@ -68,10 +68,6 @@ enum custom_keycodes {
     KC_DLINE
 };
 
-enum {
-    TD_SPC_ENT,
-};
-
 #define VS_RDBG LCTL_T(LSFT_T(KC_F5))
 #define HRM_A LGUI_T(KC_A)
 #define HRM_S LALT_T(KC_S)
@@ -106,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,   KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC, \
   NM_PAD,   HRM_A,  HRM_S,  HRM_D,  HRM_F,  KC_G,                       KC_H,   HRM_J,  HRM_K,  HRM_L,  HRM_SCLN, KC_QUOT, \
   KC_LSFT,  KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   VS_RDBG,        PRNT_SCRN,  KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, \
-                KC_LGUI, KC_TAB, KC_LCTL, KC_LOWER, KC_ENT,         TD(TD_SPC_ENT),  KC_RAISE, KC_RCTL, KC_RALT, KC_RGUI \
+                KC_LGUI, KC_TAB, KC_LCTL, KC_LOWER, KC_ENT,         KC_SPACE,  KC_RAISE, KC_RCTL, KC_RALT, KC_RGUI \
 ),
 
 /*
@@ -618,7 +614,3 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 
 #endif
-
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_SPC_ENT] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT),
-};
